@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Square</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+        }
+
+        .square {
+            width: 200px;
+            height: 200px;
+            background-color: #3498db;
+            margin: 50px auto;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .square:hover {
+            background-color: #e74c3c;
+            transform: scale(1.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Interactive Square</h1>
+    </header>
+
+    <div class="square"></div>
+
+    <button onclick="changeSquareColor()">Change Color</button>
+
+    <script>
+        function changeSquareColor() {
+            const square = document.querySelector('.square');
+            // Generate a random color
+            const randomColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+            square.style.backgroundColor = randomColor;
+        }
+    </script>
+
+</body>
+</html>
+
